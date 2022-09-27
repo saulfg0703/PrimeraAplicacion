@@ -29,7 +29,7 @@ public class MainActivity extends Activity {
         mostrarResultado();
     }
     public void mostrarResultado(){
-        TextView resultadoTexto = (TextView)findViewById(R.id.contador);
-        resultadoTexto.setText("Contador: " + contador);
+        TextView resultadoTexto = (TextView)findViewById(R.id.contadorTexto);
+        resultadoTexto.setText(String.valueOf(contador));
     }
 }

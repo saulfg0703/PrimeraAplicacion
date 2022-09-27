@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -14,58 +14,8 @@
         tools:layout_editor_absoluteY="-77dp">
 
 
-        <Button
-            android:id="@+id/incrementar"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_above="@+id/resetea"
-            android:layout_marginTop="40dp"
-            android:onClick="incrementarContador"
-            android:shadowColor="#4CAF50"
-            android:text="Incrementa"
-            android:textColor="#4CAF50"
-            android:textSize="20sp"
-            app:rippleColor="#4CAF50"
-            app:strokeColor="#4CAF50"
-            tools:ignore="MissingConstraints" />
-
-        <Space
-            android:layout_width="20dp"
-            android:layout_height="20dp"
-            />
-
-
-
-        <Button
-            android:id="@+id/decrementar"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_above="@+id/resetea"
-            android:onClick="decrementarContador"
-            android:shadowColor="#EC0E0E"
-            android:text="Decrementa"
-            android:textColor="#CA0D0D"
-            android:textSize="20sp"
-            app:rippleColor="#BD0420"
-            app:strokeColor="#DF1010"
-            tools:ignore="MissingConstraints" />
-
-        <Button
-            android:id="@+id/resetea"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="100dp"
-            android:onClick="resetearContador"
-            android:shadowColor="#2196F3"
-            android:text="Resetear"
-            android:textColor="#2196F3"
-            android:textSize="34sp"
-            app:rippleColor="#2196F3"
-            app:strokeColor="#2196F3"
-            tools:ignore="MissingConstraints" />
-
         <TextView
-            android:id="@+id/contador"
+            android:id="@+id/tituloTexto"
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:layout_marginTop="90dp"
@@ -75,6 +25,69 @@
             android:textSize="34sp"
             tools:ignore="MissingConstraints" />
 
+        <TextView
+            android:id="@+id/contadorTexto"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:textAlignment="center"
+            android:textSize="56dp" />
+
 
     </LinearLayout>
-</androidx.appcompat.widget.LinearLayoutCompat>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center|center_vertical"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/incrementar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="incrementarContador"
+            android:shadowColor="#4CAF50"
+            android:text="Incrementa"
+            android:textColor="#4CAF50"
+            android:textSize="20sp"
+            app:rippleColor="#4CAF50"
+            app:strokeColor="#4CAF50"
+            tools:ignore="MissingConstraints" />
+
+        <Button
+            android:id="@+id/decrementar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="decrementarContador"
+            android:shadowColor="#EC0E0E"
+            android:text="Decrementa"
+            android:textColor="#CA0D0D"
+            android:textSize="20sp"
+            app:rippleColor="#BD0420"
+            app:strokeColor="#DF1010"
+            tools:ignore="MissingConstraints" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="bottom|center_horizontal"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/resetea"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="resetearContador"
+            android:shadowColor="#2196F3"
+            android:text="Resetear"
+            android:textColor="#2196F3"
+            android:textSize="34sp"
+            app:rippleColor="#2196F3"
+            app:strokeColor="#2196F3"
+            tools:ignore="MissingConstraints" />
+    </LinearLayout>
+
+</RelativeLayout>
