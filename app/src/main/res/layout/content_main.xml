@@ -19,7 +19,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_above="@+id/resetea"
-            android:layout_marginLeft="220dp"
+            android:layout_marginTop="40dp"
             android:onClick="incrementarContador"
             android:shadowColor="#4CAF50"
             android:text="Incrementa"
@@ -29,12 +29,18 @@
             app:strokeColor="#4CAF50"
             tools:ignore="MissingConstraints" />
 
+        <Space
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            />
+
+
+
         <Button
             android:id="@+id/decrementar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_above="@+id/resetea"
-            android:layout_marginRight="220dp"
             android:onClick="decrementarContador"
             android:shadowColor="#EC0E0E"
             android:text="Decrementa"
