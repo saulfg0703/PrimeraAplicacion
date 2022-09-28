@@ -48,12 +48,17 @@
             android:layout_height="wrap_content"
             android:onClick="incrementarContador"
             android:shadowColor="#4CAF50"
-            android:text="Incrementa"
+            android:text="+"
             android:textColor="#4CAF50"
-            android:textSize="20sp"
+            android:textSize="34sp"
             app:rippleColor="#4CAF50"
             app:strokeColor="#4CAF50"
             tools:ignore="MissingConstraints" />
+
+        <Space
+            android:layout_width="100dp"
+            android:layout_height="0dp"
+             />
 
         <Button
             android:id="@+id/decrementar"
@@ -61,9 +66,9 @@
             android:layout_height="wrap_content"
             android:onClick="decrementarContador"
             android:shadowColor="#EC0E0E"
-            android:text="Decrementa"
+            android:text="-"
             android:textColor="#CA0D0D"
-            android:textSize="20sp"
+            android:textSize="34sp"
             app:rippleColor="#BD0420"
             app:strokeColor="#DF1010"
             tools:ignore="MissingConstraints" />
