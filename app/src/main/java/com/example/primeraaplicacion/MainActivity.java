@@ -43,7 +43,7 @@ public class MainActivity extends Activity {
         if(contador<0){
             contador = 0;
         }
-        mostrarResultado();
+
     }
 
 }
