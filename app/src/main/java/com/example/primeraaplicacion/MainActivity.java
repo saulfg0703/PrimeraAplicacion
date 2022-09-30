@@ -32,10 +32,9 @@ public class MainActivity extends Activity {
     @SuppressLint("SetTextI18n")
     public void decrementarContador(View vista){
         CheckBox validar = findViewById(R.id.validar);
+        contador --;
         if(validar.isChecked()){
             contador = 0;
-        }else{
-            contador --;
         }
         textoAMostrar.setText(""+contador);
     }
