@@ -39,11 +39,14 @@ public class MainActivity extends Activity {
         texto.setText(String.valueOf(contador));
     }
     public void conteoNegativos(View vista){
-        CheckBox validar = (CheckBox) findViewById(R.id.validar);
-        if(contador<0){
-            contador = 0;
-        }
 
+        if(contador<0){
+            CheckBox validar = (CheckBox) findViewById(R.id.validar);
+            if(validar.isChecked()) {
+                contador = 0;
+            }
+        }
+        textoAMostrar.setText("" + contador);
     }
 
 }
