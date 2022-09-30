@@ -71,7 +71,7 @@
                 android:layout_weight="1"
                 android:text="No permitir negativos"
                 android:textSize="20sp"
-                android:onClick="conteoNegativos"/>
+                android:onClick="decrementarContador"/>
         </LinearLayout>
 
 

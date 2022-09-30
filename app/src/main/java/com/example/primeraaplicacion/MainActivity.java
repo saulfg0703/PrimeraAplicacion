@@ -12,11 +12,13 @@ public class MainActivity extends Activity {
 
     public int contador = 0;
     TextView textoAMostrar;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         textoAMostrar = findViewById(R.id.contadorTexto);
+
         contador = 0;
     }
     @SuppressLint("SetTextI18n")
@@ -29,12 +31,11 @@ public class MainActivity extends Activity {
 
     @SuppressLint("SetTextI18n")
     public void decrementarContador(View vista){
-        contador --;
-        if(contador<0){
-            CheckBox validar = findViewById(R.id.validar);
-            if(validar.isChecked()) {
-                contador = 0;
-            }
+        CheckBox validar = findViewById(R.id.validar);
+        if(validar.isChecked()){
+            contador = 0;
+        }else{
+            contador --;
         }
         textoAMostrar.setText(""+contador);
     }
@@ -42,6 +43,7 @@ public class MainActivity extends Activity {
         EditText resetearNumero = findViewById(R.id.textoReseteo);
         contador = Integer.parseInt(resetearNumero.getText().toString());
         resetearNumero.setText("");
+        textoAMostrar.setText(""+contador);
     }
  /*   public void mostrarResultado(){
         TextView texto = (TextView)findViewById(R.id.contadorTexto);
