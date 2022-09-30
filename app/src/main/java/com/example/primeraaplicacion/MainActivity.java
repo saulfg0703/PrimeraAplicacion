@@ -1,5 +1,6 @@
 package com.example.primeraaplicacion;
 
+import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.os.Bundle;
 import android.view.View;
@@ -9,44 +10,41 @@ import android.widget.TextView;
 
 public class MainActivity extends Activity {
 
-    int contador = 0;
+    public int contador = 0;
     TextView textoAMostrar;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
+        textoAMostrar = findViewById(R.id.contadorTexto);
+        contador = 0;
     }
+    @SuppressLint("SetTextI18n")
     public void incrementarContador(View vista){
         contador ++;
-        mostrarResultado();
+
+        textoAMostrar.setText(""+contador);
 
     }
 
+    @SuppressLint("SetTextI18n")
     public void decrementarContador(View vista){
         contador --;
-        mostrarResultado();
-    }
-    public void resetearContador(View vista){
-        EditText resetearNumero =(EditText) findViewById(R.id.textoReseteo);
-        contador = Integer.parseInt(resetearNumero.getText().toString());
-        resetearNumero.setText("");
-        mostrarResultado();
-
-    }
-    public void mostrarResultado(){
-        TextView texto = (TextView)findViewById(R.id.contadorTexto);
-        texto.setText(String.valueOf(contador));
-    }
-    public void conteoNegativos(View vista){
-
         if(contador<0){
-            CheckBox validar = (CheckBox) findViewById(R.id.validar);
+            CheckBox validar = findViewById(R.id.validar);
             if(validar.isChecked()) {
                 contador = 0;
             }
         }
-        textoAMostrar.setText("" + contador);
+        textoAMostrar.setText(""+contador);
     }
-
+    public void resetearContador(View vista){
+        EditText resetearNumero = findViewById(R.id.textoReseteo);
+        contador = Integer.parseInt(resetearNumero.getText().toString());
+        resetearNumero.setText("");
+    }
+ /*   public void mostrarResultado(){
+        TextView texto = (TextView)findViewById(R.id.contadorTexto);
+        texto.setText(String.valueOf(contador));
+    }*/
 }
