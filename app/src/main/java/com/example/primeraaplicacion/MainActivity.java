@@ -42,12 +42,18 @@ public class MainActivity extends Activity {
     }
 
     public void resetearContador(View vista) {
+
         EditText resetearNumero = findViewById(R.id.textoReseteo);
-        contador = Integer.parseInt(resetearNumero.getText().toString());
-        resetearNumero.setText("");
-        textoAMostrar.setText("" + contador);
-        InputMethodManager miTeclado = (InputMethodManager) getSystemService(INPUT_METHOD_SERVICE);
-        miTeclado.hideSoftInputFromWindow(resetearNumero.getWindowToken(),0);
+        if (resetearNumero.getText().length() == 0) {
+            resetearNumero.setText("0");
+        } else {
+            contador = Integer.parseInt(resetearNumero.getText().toString());
+            resetearNumero.setText("");
+            textoAMostrar.setText("" + contador);
+
+            InputMethodManager miTeclado = (InputMethodManager) getSystemService(INPUT_METHOD_SERVICE);
+            miTeclado.hideSoftInputFromWindow(resetearNumero.getWindowToken(), 0);
+        }
     }
 
 
