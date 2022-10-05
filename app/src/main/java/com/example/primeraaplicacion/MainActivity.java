@@ -7,6 +7,8 @@ import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.CheckBox;
 import android.widget.EditText;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import android.widget.TextView;
 
 public class MainActivity extends Activity {
@@ -25,18 +27,47 @@ public class MainActivity extends Activity {
 
     @SuppressLint("SetTextI18n")
     public void incrementarContador(View vista) {
-        contador++;
+        RadioButton positivo = findViewById(R.id.Positivos);
+        positivo.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (!positivo.isSelected()) {
+                    positivo.setChecked(true);
+                    positivo.setSelected(true);
+                } else {
+                    positivo.setChecked(false);
+                    positivo.setSelected(false);
+                }
+            }
+        });
 
+        if(positivo.isChecked()){
+
+            contador++;
+        }
         textoAMostrar.setText("" + contador);
 
     }
 
     @SuppressLint("SetTextI18n")
     public void decrementarContador(View vista) {
-        CheckBox validar = findViewById(R.id.validar);
-        contador--;
-        if (validar.isChecked()) {
-            contador = 0;
+        RadioButton negativo = findViewById(R.id.Negativos);
+        negativo.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (!negativo.isSelected()) {
+                    negativo.setChecked(true);
+                    negativo.setSelected(true);
+                } else {
+                    negativo.setChecked(false);
+                    negativo.setSelected(false);
+                }
+            }
+        });
+
+        if (negativo.isChecked()) {
+
+            contador--;
         }
         textoAMostrar.setText("" + contador);
     }
@@ -55,6 +86,7 @@ public class MainActivity extends Activity {
             miTeclado.hideSoftInputFromWindow(resetearNumero.getWindowToken(), 0);
         }
     }
+
 
 
 

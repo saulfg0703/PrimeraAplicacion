@@ -48,7 +48,7 @@
                 android:shadowColor="#2196F3"
                 android:text="Resetear"
                 android:textColor="#2196F3"
-                android:textSize="20sp"
+                android:textSize="18sp"
                 app:rippleColor="#2196F3"
                 app:strokeColor="#2196F3"
                 tools:ignore="MissingConstraints" />
@@ -64,14 +64,29 @@
                 android:hint="0"
                 android:inputType="numberSigned|textPersonName" />
 
-            <CheckBox
-                android:id="@+id/validar"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="No permitir negativos"
-                android:textSize="20sp"
-                android:onClick="decrementarContador"/>
+            <RadioGroup
+                android:id="@+id/grupobotones"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <RadioButton
+                    android:id="@+id/Positivos"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="430dp"
+                    android:text="Positivos"
+                    android:textSize="16sp" />
+
+                <RadioButton
+                    android:id="@+id/Negativos"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="right|end"
+                    android:text="Negativos"
+                    android:textSize="16sp" />
+
+            </RadioGroup>
+
         </LinearLayout>
 
 
